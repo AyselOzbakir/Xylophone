@@ -1,59 +1,43 @@
-![App Brewery Banner](Documentation/AppBreweryBanner.png)
-
 # Xylophone
 
-## Our Goal
+A simple iOS app that turns the screen into a playable xylophone — tap a colored key and it plays the corresponding note.
 
-The goal of this tutorial is to dive into a simple iOS recipe - how to play sound and use an Apple library called AVFoundation. The most important skill of a great programmer is being able to solve your own problems. We’ll do that by exploring StackOverflow, Apple Documentation and learning how to search for solutions effectively. By learning to use these tools, you’ll be able to start adding custom features to an app and get it to do what you want it to.
+## Overview
 
+The app displays a row of colored keys, each mapped to a musical note (C, D, E, F, G, A, B). Tapping a key plays its sound instantly, letting the user play simple tunes.
 
-## What you will create
+## Features
 
-You will be making your first musical instrument! Music apps are so popular on the App Store that they even get their own category. So in this module, we’re going to make a colourful XyloPhone app. Get it? Ok, the jokes are bad, but remember, I only wrote the good ones... 
+- Seven colored keys, one per musical note
+- Instant audio playback on tap
+- Simple, clean single-screen UI built with Auto Layout
 
-## What you will learn
+## Requirements
 
-* How to play sound using AVFoundation and AVAudioPlayer.
-* Understand Apple documentation and how to use StackOverflow.
-* Functions and methods in Swift. 
-* Data types.
-* Swift loops.
-* Variable scope.
-* The ViewController lifecycle.
-* Error handling in Swift.
-* Code refactoring.
-* Basic debugging.
+- Xcode (latest stable recommended)
+- iOS 13.0+
+- Swift 5
 
-## Replacement Code
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone git@github.com:AyselOzbakir/Xylophone.git
+   ```
+2. Open `Xylophone.xcodeproj` in Xcode.
+3. Select a simulator or a connected device.
+4. Press **Run** (`Cmd + R`) to build and launch the app.
+
+## Project Structure
 
 ```
-import UIKit
-import AVFoundation
-
-class ViewController: UIViewController {
-    
-    var player: AVAudioPlayer!
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    @IBAction func keyPressed(_ sender: UIButton) {
-        playSound()
-    }
-    
-    func playSound() {
-        let url = Bundle.main.url(forResource: "C", withExtension: "wav")
-        player = try! AVAudioPlayer(contentsOf: url!)
-        player.play()
-                
-    }
-}
+Xylophone/
+├── ViewController.swift    # Handles key taps and triggers sound playback
+├── Main.storyboard         # UI layout for the keys
+├── Assets.xcassets/        # App icons and key images
+└── *.wav                   # Audio files for each note
 ```
 
+## Acknowledgements
 
-
->This is a companion project to The App Brewery's Complete App Development Bootcamp, check out the full course at [www.appbrewery.co](https://www.appbrewery.co/)
-
-![End Banner](Documentation/readme-end-banner.png)
-
+Built as part of the **App Brewery iOS App Development Bootcamp**.
